@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Choose Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+/* ===================== HEADER ===================== */
+.header {
+    width: 100%;
+    padding: 18px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(90deg, #007bff, #00a2ff);
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+    letter-spacing: 0.5px;
+    position: sticky;
+    top: 0;
+}
+
+/* ================= CONTAINER ================= */
+.wrapper {
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 900px;
+    width: 90%;
+    text-align: center;
+}
+
+/* ================= TEXT ================= */
+.title {
+    font-size: 20px;
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+/* ================= IMAGE GRID ================= */
+.image-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ================= IMAGE CARD ================= */
+.image-card {
+    width: 220px;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: 0.2s;
+    background: white;
+}
+
+.image-card:hover {
+    border-color: #007bff;
+    transform: translateY(-2px);
+}
+
+/* ================= IMAGE ================= */
+.image-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* ================= TEMPLATE TITLE ================= */
+.image-card-title {
+    text-align: center;
+    padding: 8px;
+    background: #fafafa;
+    font-size: 14px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    Detection of Related / Not Related Response with Feedback
+</div>
+
+<div class="wrapper">
+    <div class="container">
+
+        <div class="title">Choose Template:</div>
+
+        <div class="image-grid">
+            <div class="image-card" onclick="go('img1')">
+                <img src="/static/images/img1.png">
+                <div class="image-card-title">Template 1</div>
+            </div>
+
+            <div class="image-card" onclick="go('img2')">
+                <img src="/static/images/img2.png">
+                <div class="image-card-title">Template 2</div>
+            </div>
+
+            <div class="image-card" onclick="go('img3')">
+                <img src="/static/images/img3.png">
+                <div class="image-card-title">Template 3</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function go(id) {
+    window.location.href = "/answer/" + id;
+}
+</script>
+
+</body>
+</html>

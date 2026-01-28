@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Result Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+/* ===== Global Layout ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* prevent scrolling */
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+/* Page title */
+.page-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+/* Main container layout */
+.container {
+    height: calc(100vh - 70px);
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image Container */
+.image-box {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+}
+
+/* Feedback Container */
+.info-box {
+    flex: 1.8;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Image sizing */
+.selected-image {
+    max-height: 65vh;
+    width: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* Answer + Feedback boxes */
+.section {
+    background: white;
+    padding: 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+/* Feedback status colors */
+.related {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.not_related {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Try Again Button */
+button {
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    transition: 0.2s;
+}
+button:hover {
+    background: #0056b3;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page-title">Result Summary</div>
+
+<div class="container">
+
+    <!-- LEFT IMAGE -->
+    <div class="image-box">
+        <img src="/static/images/{{ image_id }}.png" class="selected-image">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="info-box">
+
+        <div class="section">
+            <b>Your Answer:</b><br>
+            {{ answer }}
+        </div>
+
+        <div class="section {{ status }}">
+            <b>Feedback:</b><br>
+            {{ feedback }}
+        </div>
+
+        <a href="/" style="text-decoration:none;">
+            <button>Try Again</button>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

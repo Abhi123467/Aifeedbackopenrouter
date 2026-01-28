@@ -1,0 +1,10 @@
+Flask
+gunicorn
+requests
+Pillow
+transformers
+accelerate
+huggingface-hub
+torch==2.0.0+cpu
+torchvision==0.15.0+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
